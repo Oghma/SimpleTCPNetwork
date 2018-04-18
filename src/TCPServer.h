@@ -32,6 +32,7 @@ public:
     void receive();
     Message getMessage();
     void send(Message msg);
+    void send(int sock, std::string message);
     void detach();
     bool message();
 };

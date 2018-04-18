@@ -59,6 +59,10 @@ void TCPServer::send(Message message) {
     send(message.getSocket(), msg.c_str(), msg.length(),  0);
 }
 
+void TCPServer::send(int sock, std::string message) {
+    send(sock, message.c_str(), message.length(), 0);
+}
+
 void TCPServer::detach() {
     close(sock);
 }
