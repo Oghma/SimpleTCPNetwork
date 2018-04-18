@@ -4,6 +4,7 @@
 #include <thread>
 #include <mutex>
 #include <queue>
+#include <condition_variable>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -24,6 +25,9 @@ private:
     void task(int newSock);
 
 public:
+    static std::mutex messageMutex;
+    static std::condition_variable cv;
+
     void setup(int port, int connections);
     void receive();
     Message getMessage();
