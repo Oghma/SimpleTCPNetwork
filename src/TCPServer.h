@@ -31,8 +31,8 @@ public:
     void setup(int port, int connections);
     void receive();
     Message getMessage();
-    void send(Message msg);
-    void send(int sock, std::string message);
+    void sendMessage(Message msg);
+    void sendMessage(int sock, std::string message);
     void detach();
     bool message();
 };

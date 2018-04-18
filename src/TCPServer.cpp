@@ -54,12 +54,12 @@ Message TCPServer::getMessage() {
     return msg;
 }
 
-void TCPServer::send(Message message) {
+void TCPServer::sendMessage(Message message) {
     std::string msg = message.getMessage();
     send(message.getSocket(), msg.c_str(), msg.length(),  0);
 }
 
-void TCPServer::send(int sock, std::string message) {
+void TCPServer::sendMessage(int sock, std::string message) {
     send(sock, message.c_str(), message.length(), 0);
 }
 
