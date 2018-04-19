@@ -1,8 +1,5 @@
 #include "TCPServer.h"
 
-std::mutex TCPServer::messageMutex;
-std::condition_variable TCPServer::cv;
-
 void TCPServer::task(int newSock) {
     int n;
     char msg[MAXPACKETSIZE];

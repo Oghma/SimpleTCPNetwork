@@ -25,8 +25,8 @@ private:
     void task(int newSock);
 
 public:
-    static std::mutex messageMutex;
-    static std::condition_variable cv;
+    std::mutex messageMutex;
+    std::condition_variable cv;
 
     void setup(int port, int connections);
     void receive();
